@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="/static/metro/css/metro-bootstrap.css"/>
+
+</head>
+{% include "./blog/header.html" %}
+<body>
+    {%  for post in object_list %}
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.intro }}</p>
+    {%  endfor %}
+
+</body>
+</html>

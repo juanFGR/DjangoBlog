@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="/static/metro/css/metro-bootstrap.css"/>
+
+</head>
+{% include "./blog/header.html" %}
+
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>
