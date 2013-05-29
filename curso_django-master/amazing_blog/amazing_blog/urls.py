@@ -22,6 +22,7 @@ urlpatterns = patterns('',
     url(r'^post/(?P<pk>\d+)/delete$', login_required(PostDelete.as_view()), name='post_delete'),
     url(r'^post/(?P<pk>\d+)$', PostDetail.as_view(), name="post_detail"),
     url(r'^$', PostList.as_view(), name="post_list"),
+    url(r'^post/', PostList.as_view(), name="post_list"),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^tinymce/', include('tinymce.urls')),
 )

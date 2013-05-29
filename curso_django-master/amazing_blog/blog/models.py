@@ -1,12 +1,15 @@
 from django.core.urlresolvers import reverse
 from django.db import models
+from django import forms
+from django.contrib.flatpages.models import FlatPage
+from tinymce.widgets import TinyMCE
 
 
 # Create your models here.
 class Post(models.Model):
     title = models.CharField(max_length=200)
-    intro = models.TextField()
-    mas = models.TextField(null=True, blank=True)
+    intro = models.TextField(TinyMCE(attrs={'cols': 80, 'rows': 80}))
+    mas = models.TextField(TinyMCE(attrs={'cols': 80, 'rows': 80}))
 
     def __unicode__(self):
         return self.title
@@ -17,4 +20,4 @@ class Post(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey(Post)
-    comment = models.TextField()
+    comment = models.TextField(TinyMCE(attrs={'cols': 80, 'rows': 80}))

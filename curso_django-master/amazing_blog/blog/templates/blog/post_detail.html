@@ -2,12 +2,43 @@
 <html>
 <head>
     <title></title>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="/static/metro/css/metro-bootstrap.css"/>
+
 </head>
 {% include "./blog/header.html" %}
-
 <body>
-        <h1>{{ post.title }}</h1>
-        <p>{{ post.intro }}</p>
-        <p>{{ post.mas }}</p>
+	
+	<table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Intro</th>
+        <th>mas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style = "background-color:#AAA">
+         <code><b>&lt;{{ post.title }}&gt;</b></code>
+        </td>
+        <td>
+			{{ post.intro }}
+        </td>
+        <td>
+          {{ post.mas }}
+        </td>
+      </tr>
+      
+      
+  
+    </tbody>
+  </table>
 </body>
+
+<footer style = "background-color:#AAA">
+<div style="text-align:right; ">
+			  <a href = "{% url 'post_list' %}" class="btn btn-primary btn-large">View all</a>
+</div>
+</footer>
 </html>

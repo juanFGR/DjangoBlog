@@ -8,11 +8,20 @@
 {% include "./blog/header.html" %}
 
 <body>
-<h1>Esta seguro de que quiere borrar</h1>
-<form method="Post">
-    {%  csrf_token %}
-    {{ form }}
-    <button class="submit">Eliminar</button>
-</form>
+	<div class="hero-unit">
+		<h1>Esta seguro de que quiere borrar</h1>
+		<form method="Post">
+			{%  csrf_token %}
+			{{ form }}
+			
+		</form>
+		  <p>
+			<button class=" btn btn-primary btn-large" >
+			 Eliminar
+			</button>
+		  </p>
+</div>
+
+
 </body>
 </html>

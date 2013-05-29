@@ -9,10 +9,12 @@
 {% include "./blog/header.html" %}
 
 <body>
+	<div style="text-align:center;">
     <form method="POST">
         {% csrf_token %}
         {{ form }}
         <button type="submit">Guardar</button>
     </form>
+    </div>
 </body>
 </html>

@@ -8,10 +8,47 @@
 </head>
 {% include "./blog/header.html" %}
 <body>
-    {%  for post in object_list %}
-        <h1>{{ post.title }}</h1>
-        <p>{{ post.intro }}</p>
+	
+	
+		<table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Intro</th>
+        <th>mas</th>
+      </tr>
+    </thead>
+    <tbody>
+		 {%  for post in object_list %}
+        <tr>
+        <td style = "background-color:#AAA">
+         <code><b>&lt;{{ post.title }}&gt;</b></code>
+        </td>
+        <td>
+			{{ post.intro }}
+        </td>
+        <td>
+          {{ post.mas }}
+        </td>
+      </tr>
     {%  endfor %}
-
+      
+      
+      
+   
+ 
+    </tbody>
+  </table>
+  
+  
+  
+  
 </body>
+<footer style = "background-color:#AAA">
+<div style="text-align:right; ">
+			  <a href = "{% url 'post_create' %}" class="btn btn-primary btn-large">Crete new Post</a>
+</div>
+</footer>
+
+
 </html>
